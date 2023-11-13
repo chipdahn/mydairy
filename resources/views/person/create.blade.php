@@ -30,6 +30,17 @@
                             <label class="block" for="phone"> phone</label>
                             <input class="block w-full" type="text" name="phone" id="phone" value="{{old('phone')}}">
                         </div>
+                        <div>
+                            <label class="block" for="business"> business</label>
+                            <select class="block w-full" name="business_id" id="business_id">
+                                <option value="" selected>(No Business)</option>
+                                @foreach($businesses as $business)
+                                    <option value="{{$business->id}}" @selected($business->id == old('business_id'))>
+                                        {{$business->business_name}}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                     <div class="mt-6 flex items-center justify-end gap-x-6">
                         <a href="{{route('person.index')}}">Cancel</a>
