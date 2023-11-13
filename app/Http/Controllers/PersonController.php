@@ -13,8 +13,6 @@ class PersonController extends Controller
      */
     public function index()
     {
-//        $people = Person::all();
-
         return view('person.index')->with('people', Person::all());
     }
 
